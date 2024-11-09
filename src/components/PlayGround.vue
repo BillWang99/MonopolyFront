@@ -50,6 +50,36 @@
         console.log(formData);
     }
 
+    //切換玩家
+    const switchPlayer = async()=>{
+        try{
+            await axios.put('http://monopoly.com.tw/api/Players/'+GameToken,{
+                headers:{
+                    'content-type':'application/json',
+                }
+            })
+        }catch(error){
+            console.log(error);
+        }finally{
+            location.reload();
+        }
+    }
+
+    //回到上一位玩家
+    const backToPlayer = async()=>{
+        try{
+            await axios.put('http://monopoly.com.tw/api/RoundData/'+GameToken, {
+                headers:{
+                    'content-type':'application/json',
+                }
+            });
+        }catch(error){
+            console.log(error);
+        }finally{
+            location.reload();
+        }
+    }
+
     onMounted(()=>{
         fetchData();
     });
@@ -57,6 +87,7 @@
 
 <template>
     <div class="container">
+        <button class="btn btn-secondary mt-2" @click="backToPlayer()"><i class="bi bi-arrow-return-left"></i>上一位</button>
         <div class="row">
             <div class="col-sm-3" v-for="p in players" :key="p.id">
                 <div class="card  mt-3 mx-2" v-bind:class="p.isTarget?'border-warning':null">
@@ -70,7 +101,7 @@
                         </div>
                         <div class="d-grid gap-2 mt-2" v-if="p.isTarget">
                             <button class="btn btn-primary d-block w-100" @click="send(p.order)">送出</button>
-                            <button class="btn btn-secondary d-block" >下一位</button>
+                            <button class="btn btn-secondary d-block" @click="switchPlayer()">下一位</button>
                         </div>
                         <div class="loader mx-auto mt-5" v-else></div>
                     </div>
