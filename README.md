@@ -1,29 +1,32 @@
-# MonopolyFront
+# MonopolyFront 富翁計分程式
 
-This template should help get you started developing with Vue 3 in Vite.
+每年過年總會跟表弟們玩大富翁，但現在都已經改用行動支付了，實在是懶惰拿紙鈔，
+因此就決定做一款計分程式，只要一台裝置就能記錄做多10人的帳務狀態，快來體驗吧!
 
-## Recommended IDE Setup
+# 專案功能說明
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+**1.建立遊戲**
+    僅需輸入遊玩人數即可建立新的遊戲(注意:遊玩人數不可超過10人)
 
-## Customize configuration
+**2.局內操作**
+    採回合制操作，當前玩家會出現操作選單，用於紀錄該回合的狀態(收支與金額)，
+    如果不小心操錯錯誤也可透過返回來還原操作
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+**3.隨時存檔**
+    雖然說欠的錢要在年前還清，但有時候玩到一半被叫去拜年、洗碗、踏青走春都是常有的事，
+    這個專案提供隨時存檔的功能，沒完結的對局明年繼續!
 
-## Project Setup
+# 使用專案
+
+## 安狀套件
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### local端執行
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
