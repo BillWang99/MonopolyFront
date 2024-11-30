@@ -18,7 +18,7 @@
 
 # 使用專案
 
-## 安狀套件
+## 安裝套件
 
 ```sh
 npm install
@@ -29,4 +29,7 @@ npm install
 ```sh
 npm run dev
 ```
+
+# 提醒事項
+此專案僅有前端部分，如需整合後端功能請安裝後端版本:[MonopolyBack](<https://github.com/BillWang99/MonopolyBack.git> )
 
